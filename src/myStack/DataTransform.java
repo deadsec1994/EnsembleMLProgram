@@ -29,7 +29,7 @@ public class DataTransform {
 		//cla=0;
 		}
 	}
-	
+
 	public int[][] filter(Instances data)
 	{
 		int datanum = data.numInstances();

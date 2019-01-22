@@ -28,11 +28,7 @@ public class Measure {
 	        count4 = 0;
 	    }
 
-	
 
-//	public double getValue() {
-//	    return sum / count;
-//	    }
 	
 	public double getValue(String s) {
 	    if(s.equals("-A"))

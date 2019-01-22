@@ -24,7 +24,13 @@ public class Prediction {
         double HammingLoss2 = 0;
 
 
-
+    /**
+     * @Description 返回预测结果的评价指标
+     * @param  
+     * @Return double[]
+     * @Author cuiwei
+     * @Date 2019-01-22 10:51
+     */
         public double[] getvalue(String s) {
             double[] measure = new double[5];
             if(s.equals("-A")) {
@@ -32,29 +38,35 @@ public class Prediction {
                 measure[1] = Precision/10;
                 measure[2] = Recall/10;
                 measure[3] = HammingLoss1/10;
-                measure[4] = F_Measure;
+                measure[4] = (2*measure[1]*measure[2])/(measure[1]+measure[2]);
             }
             else if(s.equals("-B")) {
                 measure[0] = AvgCorrect2/10;
                 measure[1] = Precision2/10;
                 measure[2] = Recall2/10;
                 measure[3] = HammingLoss2/10;
-                measure[4] = F_Measure2;
+                measure[4] = (2*measure[1]*measure[2])/(measure[1]+measure[2]);
             }
             return measure;
         }
 
 
+        /**
+         * @Description TODO
+         * @param train
+         * @param test
+         * @param numofCla        
+         * @Return void
+         * @Author cuiwei
+         * @Date 2019-01-22 11:02
+         */
         public void Predict(Instances train, Instances test, int numofCla) throws Exception {
-
 
             train.setClassIndex(train.numAttributes()-1);
             test.setClassIndex(test.numAttributes()-1);
-
             AdaBoostM1 adaclassifier = new AdaBoostM1();
             Bagging bagclassifier = new Bagging();
             J48 baseClassifier = new J48();
-
             Measure m = new Measure();
             DataTransform df = new DataTransform();
 
@@ -112,10 +124,6 @@ public class Prediction {
             Precision2 += m.getValue("-P");
             Recall2 += m.getValue("-R");
             HammingLoss2 += m.getValue("-H");
-
-
-            F_Measure += (2*Precision*Recall)/(Precision+Recall);
-            F_Measure2 += (2*Precision2*Recall2)/(Precision2+Recall2);
         }
 }
 
