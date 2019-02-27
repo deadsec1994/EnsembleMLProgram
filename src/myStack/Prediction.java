@@ -5,6 +5,8 @@ import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
 import weka.core.Instances;
 
+import java.util.ArrayList;
+
 public class Prediction {
         /*
          * 定义评价指标
@@ -13,20 +15,49 @@ public class Prediction {
         double AvgCorrect = 0;
         double Precision = 0;
         double Recall = 0;
-        double F_Measure = 0;
+//        double F_Measure = 0;
 
 
 
         double AvgCorrect2 = 0;
         double Precision2 = 0;
         double Recall2 = 0;
-        double F_Measure2 = 0;
+//        double F_Measure2 = 0;
         double HammingLoss2 = 0;
+        ArrayList<Double> predict_1 = new ArrayList<>();
+        ArrayList<Double> real_1 = new ArrayList<>();
+
+       public void count1(double[] temp,String s) {
+           double num_1 = 0;
+           for(double elem:temp){
+               if (elem==1)
+                       num_1++;
+           }
+           if(s.equals("P")){
+               predict_1.add(num_1);
+           }
+       }
+       /**
+        * @Description 重载count方法
+        * @param temp
+        * @Return void
+        * @Author cuiwei
+        * @Date 2019-01-23 10:26
+        */
+       public void count1(double[] temp) {
+           double num_1 = 0;
+           for(double elem:temp){
+              if (elem==1)
+                num_1++;
+             }
+           real_1.add(num_1);
+       }
+
 
 
     /**
      * @Description 返回预测结果的评价指标
-     * @param  
+     * @param  s，判断条件
      * @Return double[]
      * @Author cuiwei
      * @Date 2019-01-22 10:51
@@ -50,17 +81,25 @@ public class Prediction {
             return measure;
         }
 
-
+        public ArrayList getnum(String s){
+            if(s.equals("p"))
+                return predict_1;
+            else
+                return real_1;
+          }
         /**
-         * @Description TODO
+         * @Description TODO 预测结果
          * @param train
          * @param test
-         * @param numofCla        
+         * @param numofCla
          * @Return void
          * @Author cuiwei
          * @Date 2019-01-22 11:02
          */
         public void Predict(Instances train, Instances test, int numofCla) throws Exception {
+
+            predict_1.clear();
+            real_1.clear();
 
             train.setClassIndex(train.numAttributes()-1);
             test.setClassIndex(test.numAttributes()-1);
@@ -86,7 +125,10 @@ public class Prediction {
 
                 predictions[count] = adaclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
+
                 if(count == numofCla-1) {
+                    count1(predictions,"P");
+                    count1(Real);
                     boolean[] predict_label = df.toBool(predictions);
                     boolean[] real_label = df.toBool(Real);
                     count = 0;
@@ -109,6 +151,8 @@ public class Prediction {
                 predictions[count] = bagclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
                 if(count == numofCla-1) {
+//                    count1(predictions,"P");
+//                    count1(Real);
                     boolean[] predict_label = df.toBool(predictions);
                     boolean[] real_label = df.toBool(Real);
                     count = 0;
