@@ -212,14 +212,16 @@ public class StackMeasure {
 //			 generateArffFile(worksetTrain,trainpath);
 //			 generateArffFile(worksetTest,testpath);
 
-            String trainpath = "/Users/cuiwei/experiment/knnsearch/scene/c=" + fold;
-            File file1dir = new File(trainpath);
-            File file1 = new File(file1dir, "AdaCount_1.txt");
-            if (!file1dir.isDirectory())
-                file1dir.mkdir();
-            if (!file1.isFile())
-                file1.createNewFile();
-            FileWriter out1 = new FileWriter(file1, true);
+//            String trainpath = "/Users/cuiwei/experiment/knnsearch/scene/c=" + fold;
+//            File file1dir = new File(trainpath);
+//            File file1 = new File(file1dir, "AdaCount_1.txt");
+//            if (!file1dir.isDirectory())
+//                file1dir.mkdir();
+//            if (!file1.isFile())
+//                file1.createNewFile();
+//            FileWriter out1 = new FileWriter(file1, true);
+
+
             //类标签平衡
             MyClassBalancer classfilter = new MyClassBalancer();
             Instances balan = classfilter.process(worksetTrain);
@@ -230,22 +232,22 @@ public class StackMeasure {
                 else
                     c0++;
             }
-            System.out.println("c1:" + c1 + " ," + "c0:" + c0);
+            System.out.println("c1:" + c1 + " ," + "c0:" + c0 + " testnum:" + worksetTest.numInstances());
 
             p.Predict(balan, worksetTest, 6);//输入类标签个数 手动改
 
-            ArrayList prediction = p.getnum("p");
-            ArrayList real_1 = p.getnum("r");
-            double[] out_p = new double[prediction.size()];
-            double[] out_r = new double[real_1.size()];
-            for (int i = 0; i < prediction.size(); i++) {
-                out_p[i] = (double) prediction.get(i);
-                out_r[i] = (double) real_1.get(i);
-            }
-            for (int j = 0; j < out_p.length; j++) {
-                out1.write(out_p[j] + "," + out_r[j] + "\n");
-            }
-            out1.close();
+//            ArrayList prediction = p.getnum("p");
+//            ArrayList real_1 = p.getnum("r");
+//            double[] out_p = new double[prediction.size()];
+//            double[] out_r = new double[real_1.size()];
+//            for (int i = 0; i < prediction.size(); i++) {
+//                out_p[i] = (double) prediction.get(i);
+//                out_r[i] = (double) real_1.get(i);
+//            }
+//            for (int j = 0; j < out_p.length; j++) {
+//                out1.write(out_p[j] + "," + out_r[j] + "\n");
+//            }
+//            out1.close();
             System.out.println("fold:" + fold);
         }
 
