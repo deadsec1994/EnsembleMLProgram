@@ -1,7 +1,6 @@
 package myStack;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,7 +13,6 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
 import weka.filters.Filter;
-import weka.filters.supervised.instance.ClassBalancer;
 import weka.filters.unsupervised.attribute.NumericToNominal;
 
 
@@ -65,8 +63,8 @@ public class StackMeasure {
 
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
-        String arffFile_data = "/Users/cuiwei/experiment/data/scene.arff";
-        String xmlFile_data = "/Users/cuiwei/experiment/data/scene.xml";
+        String arffFile_data = "/Users/cuiwei/experiment/data/yeast.arff";
+        String xmlFile_data = "/Users/cuiwei/experiment/data/yeast.xml";
 
         MultiLabelInstances dataset = null;
         ImportsData id = new ImportsData();
@@ -79,7 +77,7 @@ public class StackMeasure {
             Instances train = workingset.trainCV(10, fold);
             Instances test = workingset.testCV(10, fold);
 
-            int trainSize = (int) Math.round(train.numInstances() * 50 / 100); //50%作为训练集
+            int trainSize = (int) Math.round(train.numInstances() * 70 / 100); //50%作为训练集
             int testSize = train.numInstances() - trainSize;
 
 
@@ -234,7 +232,7 @@ public class StackMeasure {
             }
             System.out.println("c1:" + c1 + " ," + "c0:" + c0 + " testnum:" + worksetTest.numInstances());
 
-            p.Predict(balan, worksetTest, 6);//输入类标签个数 手动改
+            p.Predict(balan, worksetTest, 14);//输入类标签个数 手动改
 
 //            ArrayList prediction = p.getnum("p");
 //            ArrayList real_1 = p.getnum("r");
@@ -253,9 +251,9 @@ public class StackMeasure {
 
         double[] Adamesaure = p.getvalue("-A");
         double[] Bagmesaure = p.getvalue("-B");
-        System.out.println("AdaBoost Accuracy:" + Adamesaure[0] + " Precision:" + Adamesaure[1] + " Recall:" + Adamesaure[2] +
+        System.out.println("AdaBoost Accuracy:" + Adamesaure[0] + " Precision:" + Adamesaure[1] + " \nRecall:" + Adamesaure[2] +
                 " HL:" + Adamesaure[3] + " F-measure：" + Adamesaure[4]);
-        System.out.println("Bagging Accuracy:" + Bagmesaure[0] + " Precision:" + Bagmesaure[1] + " Recall:" + Bagmesaure[2] +
+        System.out.println("\n\nBagging Accuracy:" + Bagmesaure[0] + " Precision:" + Bagmesaure[1] + " \nRecall:" + Bagmesaure[2] +
                 " HL:" + Bagmesaure[3] + " F-measure:" + Bagmesaure[4]);
     }
 

@@ -8,7 +8,6 @@ import java.util.Random;
 
 import weka.core.Instances;
 import weka.core.converters.ArffSaver;
-import weka.filters.supervised.instance.ClassBalancer;
 
 public class ImportsData {
 	public void splite(String name,int numofclass) throws Exception {

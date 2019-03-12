@@ -41,22 +41,24 @@ public class MyClassBalancer {
 
         int count = 0;
 
-        for (Instance tmp : instanceofclass0) {
-            while(count<min){
+        for (int i = 0;i<instanceofclass0.numInstances();i++) {
+            Instance tmp = instanceofclass0.instance(i);
+            if(count<min){
                 result.add(tmp);
                 count++;
             }
-           if (count == min)
-               count = 0;
-               break;
+            if (count == min) {
+                count = 0;
+                break;
+            }
         }
 
-        for (Instance tmp : instanceofclass1) {
-            while(count<min){
+        for (int j = 0;j<instanceofclass1.numInstances();j++) {
+            Instance tmp = instanceofclass1.instance(j);
+            if(count<min){
                 result.add(tmp);
                 count++;
             }
-            if (count == min) break;
         }
 //        int c1 = 0, c0 = 0;
 //        for (int i = 0;i<result.numInstances();i++) {
