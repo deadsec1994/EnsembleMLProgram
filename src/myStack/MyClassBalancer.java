@@ -1,9 +1,9 @@
 package myStack;
 
+import weka.core.Debug;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.filters.Filter;
-import weka.filters.supervised.instance.Resample;
+import java.util.Random;
 
 public class MyClassBalancer {
     public Instances process(Instances instances) throws Exception {
@@ -13,9 +13,9 @@ public class MyClassBalancer {
             throw new Error("Class can not be Numeric!");
         }
 
+
         double[] sumOfWeightsPerClass = new double[instacescopy.numClasses()];
         Instances instanceofclass1 = new Instances(instances, 0);
-        Instances instanceofclass0 = new Instances(instances, 0);
 
         for (int i = 0; i < instacescopy.numInstances(); i++) {
             Instance inst = instacescopy.instance(i);
@@ -23,10 +23,6 @@ public class MyClassBalancer {
             if ((int) inst.classValue() == 1) {
                 instanceofclass1.add(inst);
             }
-            else{
-                instanceofclass0.add(inst);
-            }
-
         }
         double min, max;
         min = max = sumOfWeightsPerClass[0];
@@ -37,38 +33,13 @@ public class MyClassBalancer {
             if (i > max)
                 max = i;
         }
-        Instances result = new Instances(instances, 0);
 
-        int count = 0;
-
-        for (int i = 0;i<instanceofclass0.numInstances();i++) {
-            Instance tmp = instanceofclass0.instance(i);
-            if(count<min){
-                result.add(tmp);
-                count++;
-            }
-            if (count == min) {
-                count = 0;
-                break;
-            }
+        double chouyang = max - min;
+        Random r = new Random();
+        for(int i = 0;i<chouyang;i++){
+            instances.add(instanceofclass1.instance(r.nextInt(instanceofclass1.numInstances())));
         }
 
-        for (int j = 0;j<instanceofclass1.numInstances();j++) {
-            Instance tmp = instanceofclass1.instance(j);
-            if(count<min){
-                result.add(tmp);
-                count++;
-            }
-        }
-//        int c1 = 0, c0 = 0;
-//        for (int i = 0;i<result.numInstances();i++) {
-//            Instance tmp = result.instance(i);
-//            if (tmp.classValue() == 1)
-//                c1++;
-//            else
-//                c0++;
-//        }
-//        System.out.println("c1:" + c1 + " ," + "c0:" + c0 );
-        return result;
+        return instances;
     }
 }
