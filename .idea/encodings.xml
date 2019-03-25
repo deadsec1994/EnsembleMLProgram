@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/myStack/DataTransform.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/myStack/ImportsData.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/myStack/Prediction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/myStack/StackMeasure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/myStack/choicesort.java" charset="GBK" />
+  </component>
+</project>
