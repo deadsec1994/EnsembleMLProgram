@@ -6,6 +6,13 @@ import weka.core.Instances;
 import java.util.Random;
 
 public class MyClassBalancer {
+    /**
+     * @Description TODO 少数类过采样
+     * @param instances  不均衡数据集
+     * @Return weka.core.Instances 平衡后的数据集
+     * @Author cuiwei
+     * @Date 2019-03-20 20:35
+     */
     public Instances process(Instances instances) throws Exception {
         Instances instacescopy = instances;
 
@@ -16,28 +23,29 @@ public class MyClassBalancer {
 
         double[] sumOfWeightsPerClass = new double[instacescopy.numClasses()];
         Instances instanceofclass1 = new Instances(instances, 0);
-
+        Instances instanceofclass0 = new Instances(instances, 0);
         for (int i = 0; i < instacescopy.numInstances(); i++) {
             Instance inst = instacescopy.instance(i);
             sumOfWeightsPerClass[(int) inst.classValue()] += inst.weight(); //默认权重为1，所以相当于统计每个类的数量
             if ((int) inst.classValue() == 1) {
                 instanceofclass1.add(inst);
             }
-        }
-        double min, max;
-        min = max = sumOfWeightsPerClass[0];
-        //获得最小,最大类的数量
-        for (double i : sumOfWeightsPerClass) {
-            if (i < min)
-                min = i;
-            if (i > max)
-                max = i;
+            else {
+                instanceofclass0.add(inst);
+            }
         }
 
-        double chouyang = max - min;
+
+        int numofclass1 = instanceofclass1.numInstances();
+        int numofclass0 = instacescopy.numInstances()-numofclass1;
+        double chouyang = Math.abs(numofclass1 - numofclass0);
         Random r = new Random();
         for(int i = 0;i<chouyang;i++){
-            instances.add(instanceofclass1.instance(r.nextInt(instanceofclass1.numInstances())));
+            if(numofclass0<numofclass1){
+                instances.add(instanceofclass0.instance(r.nextInt(instanceofclass0.numInstances())));
+            }else {
+                instances.add(instanceofclass1.instance(r.nextInt(instanceofclass1.numInstances())));
+            }
         }
 
         return instances;

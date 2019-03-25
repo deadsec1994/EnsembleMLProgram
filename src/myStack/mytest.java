@@ -10,8 +10,8 @@ public class mytest {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 	          
-	        String arffFile_train = "/Users/cuiwei/experiment/data/scene.arff";
-	        String xmlFile_train ="/Users/cuiwei/experiment/data/scene.xml";
+	        String arffFile_train = "/Users/cuiwei/experiment/data/emotions.arff";
+	        String xmlFile_train ="/Users/cuiwei/experiment/data/emotions.xml";
 //	        String arffFile_test = "C:\\Users\\wwwcu\\Desktop\\data\\medical-test.arff";  
 //	        String xmlFile_test ="C:\\Users\\wwwcu\\Desktop\\data\\medical.xml";  
 	        MultiLabelInstances data_train = null;
