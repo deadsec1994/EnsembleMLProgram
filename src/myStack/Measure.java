@@ -79,12 +79,6 @@ public class Measure {
                 }
             }
         }
-        if (tp + fp + fn == 0) {
-        	sum2 +=  1;
-        }
-        if (tp + fp == 0) {
-        	sum2 +=  0;
-        }
         sum2 +=  precision(tp,  fp,  fn);
         count2++;
     }
@@ -105,12 +99,6 @@ public class Measure {
                     fn++;
                 }
             }
-        }
-        if (tp + fp + fn == 0) {
-        	sum3 += 1;
-        }
-        if (tp + fn == 0) {
-        	sum3 += 0;
         }
         sum3 += recall(tp,  fp,  fn);
         count3++;
