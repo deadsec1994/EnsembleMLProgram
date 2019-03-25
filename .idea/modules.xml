@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BaseMLknn-Stacking.iml" filepath="$PROJECT_DIR$/BaseMLknn-Stacking.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EnsembleMLProgram.iml" filepath="$PROJECT_DIR$/EnsembleMLProgram.iml" />
     </modules>
   </component>
 </project>

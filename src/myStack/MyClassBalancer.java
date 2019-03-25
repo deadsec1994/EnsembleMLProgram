@@ -42,12 +42,12 @@ public class MyClassBalancer {
         Random r = new Random();
         for(int i = 0;i<chouyang;i++){
             if(numofclass0<numofclass1){
-                instances.add(instanceofclass0.instance(r.nextInt(instanceofclass0.numInstances())));
+                instacescopy.add(instanceofclass0.instance(r.nextInt(instanceofclass0.numInstances())));
             }else {
-                instances.add(instanceofclass1.instance(r.nextInt(instanceofclass1.numInstances())));
+                instacescopy.add(instanceofclass1.instance(r.nextInt(instanceofclass1.numInstances())));
             }
         }
 
-        return instances;
+        return instacescopy;
     }
 }
