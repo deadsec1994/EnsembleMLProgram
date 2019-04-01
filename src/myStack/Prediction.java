@@ -3,6 +3,7 @@ package myStack;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 
 import java.util.ArrayList;
@@ -11,23 +12,23 @@ public class Prediction {
         /*
          * 定义评价指标
          */
-        double HammingLoss1 = 0;
-        double AvgCorrect = 0;
-        double Precision = 0;
-        double Recall = 0;
+        private double HammingLoss1 = 0;
+        private double AvgCorrect = 0;
+        private double Precision = 0;
+        private double Recall = 0;
 //        double F_Measure = 0;
 
 
 
-        double AvgCorrect2 = 0;
-        double Precision2 = 0;
-        double Recall2 = 0;
+        private double AvgCorrect2 = 0;
+        private double Precision2 = 0;
+        private double Recall2 = 0;
 //        double F_Measure2 = 0;
-        double HammingLoss2 = 0;
-        ArrayList<Double> predict_1 = new ArrayList<>();
-        ArrayList<Double> real_1 = new ArrayList<>();
+        private double HammingLoss2 = 0;
+        private ArrayList<Double> predict_1 = new ArrayList<>();
+        private ArrayList<Double> real_1 = new ArrayList<>();
 
-       public void count1(double[] temp,String s) {
+       private void count1(double[] temp,String s) {
            double num_1 = 0;
            for(double elem:temp){
                if (elem==1)
@@ -44,7 +45,7 @@ public class Prediction {
         * @Author cuiwei
         * @Date 2019-01-23 10:26
         */
-       public void count1(double[] temp) {
+       private void count1(double[] temp) {
            double num_1 = 0;
            for(double elem:temp){
               if (elem==1)
@@ -96,7 +97,7 @@ public class Prediction {
          * @Author cuiwei
          * @Date 2019-01-22 11:02
          */
-        public void Predict(Instances train, Instances test, int numofCla) throws Exception {
+        public void Predict(Instances train, Instances test, int numofCla,int iterator) throws Exception {
 
             predict_1.clear();
             real_1.clear();
@@ -106,6 +107,7 @@ public class Prediction {
             AdaBoostM1 adaclassifier = new AdaBoostM1();
             Bagging bagclassifier = new Bagging();
             J48 baseClassifier = new J48();
+//            RandomForest baseClassifier = new RandomForest();
             Measure m = new Measure();
             DataTransform df = new DataTransform();
 
@@ -114,8 +116,6 @@ public class Prediction {
             bagclassifier.buildClassifier(train);
             adaclassifier.buildClassifier( train );
 
-//        System.out.println(test.instance(0).numClasses());
-//        System.out.println(train.instance(0).numClasses());
             double[] predictions = new double[numofCla];
             double[] Real = new double[numofCla];
 
@@ -139,6 +139,7 @@ public class Prediction {
                 }else
                     count++;
             }
+
 
             AvgCorrect += m.getValue("-A");
             Precision += m.getValue("-P");

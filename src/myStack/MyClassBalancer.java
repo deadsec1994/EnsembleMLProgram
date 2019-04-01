@@ -1,6 +1,5 @@
 package myStack;
 
-import weka.core.Debug;
 import weka.core.Instance;
 import weka.core.Instances;
 import java.util.Random;
@@ -37,7 +36,7 @@ public class MyClassBalancer {
 
 
         int numofclass1 = instanceofclass1.numInstances();
-        int numofclass0 = instacescopy.numInstances()-numofclass1;
+        int numofclass0 = instanceofclass0.numInstances();
         double chouyang = Math.abs(numofclass1 - numofclass0);
         Random r = new Random();
         for(int i = 0;i<chouyang;i++){

@@ -2,22 +2,22 @@ package myStack;
 
 
 public class Measure {
-	protected double sum1;
-	protected double sum2;
-	protected double sum3;
-	protected double sum4;
+	private double sum1;
+    private double sum2;
+    private double sum3;
+    private double sum4;
     /**
      * The number of validation examples processed
      */
-    protected int count1;
-    protected int count2;
-    protected int count3;
-    protected int count4;
-    
-    
-    protected double temp;
+    private int count1;
+    private int count2;
+    private int count3;
+    private int count4;
 
-	public void reset() {
+
+    private double temp;
+
+    public void reset() {
 	        sum1 = 0;
 	        count1 = 0;
 	        sum2 = 0;
