@@ -11,8 +11,8 @@ public class StackMeasure {
 
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
-        String arffFile_data = "/Users/cuiwei/experiment/data/Business1.arff";
-        String xmlFile_data = "/Users/cuiwei/experiment/data/Business1.xml";
+        String arffFile_data = "/Users/cuiwei/experiment/data/yeast.arff";
+        String xmlFile_data = "/Users/cuiwei/experiment/data/yeast.xml";
 
         MultiLabelInstances dataset = null;
         dataset = new MultiLabelInstances(arffFile_data, xmlFile_data);
@@ -30,15 +30,16 @@ public class StackMeasure {
             Instances test = workingset.testCV(10, fold);
             double[][] OutTestData = get.getlabels(labelIndices, test);
             double[][] OutTrainData = get.getlabels(labelIndices, train);
-
+            int neighbours = 5;
             for (int ptime = 0; ptime < 10; ptime++) {
                 Instances newdata = get.getTrainingSet(ptime, train, 1);  //抽样
                 MultiLabelInstances mlTrain = new MultiLabelInstances(newdata, dataset.getLabelsMetaData());
-                MLkNN mlknn = new MLkNN();
+                MLkNN mlknn = new MLkNN(neighbours,1);
                 mlknn.build(mlTrain);
 
                 OutTrainData = get.Predictionresult(mlknn, numofcla, train, OutTrainData, ptime);
                 OutTestData = get.Predictionresult(mlknn, numofcla, test, OutTestData, ptime);
+                neighbours +=3;
             }
             //创建新数据集保存结果
 
