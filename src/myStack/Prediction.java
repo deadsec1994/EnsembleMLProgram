@@ -3,7 +3,7 @@ package myStack;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
-import weka.classifiers.trees.RandomForest;
+import weka.core.Instance;
 import weka.core.Instances;
 
 import java.util.ArrayList;
@@ -12,23 +12,27 @@ public class Prediction {
         /*
          * 定义评价指标
          */
-        private double HammingLoss1 = 0;
-        private double AvgCorrect = 0;
-        private double Precision = 0;
-        private double Recall = 0;
+        double HammingLoss1 = 0;
+        double AvgCorrect = 0;
+        double Precision = 0;
+        double Recall = 0;
 //        double F_Measure = 0;
 
 
+        ArrayList<boolean[]> pre = new ArrayList<>();
+        ArrayList<boolean[]> real = new ArrayList<>();
 
-        private double AvgCorrect2 = 0;
-        private double Precision2 = 0;
-        private double Recall2 = 0;
+
+
+        double AvgCorrect2 = 0;
+        double Precision2 = 0;
+        double Recall2 = 0;
 //        double F_Measure2 = 0;
-        private double HammingLoss2 = 0;
-        private ArrayList<Double> predict_1 = new ArrayList<>();
-        private ArrayList<Double> real_1 = new ArrayList<>();
+        double HammingLoss2 = 0;
+        ArrayList<Double> predict_1 = new ArrayList<>();
+        ArrayList<Double> real_1 = new ArrayList<>();
 
-       private void count1(double[] temp,String s) {
+       public void count1(double[] temp,String s) {
            double num_1 = 0;
            for(double elem:temp){
                if (elem==1)
@@ -45,7 +49,7 @@ public class Prediction {
         * @Author cuiwei
         * @Date 2019-01-23 10:26
         */
-       private void count1(double[] temp) {
+       public void count1(double[] temp) {
            double num_1 = 0;
            for(double elem:temp){
               if (elem==1)
@@ -87,7 +91,17 @@ public class Prediction {
                 return predict_1;
             else
                 return real_1;
-          }
+        }
+
+        public ArrayList getArray(String s){
+            if(s.equals("p"))
+                return pre;
+            else
+                return real;
+        }
+
+
+
         /**
          * @Description TODO 预测结果
          * @param train
@@ -97,31 +111,40 @@ public class Prediction {
          * @Author cuiwei
          * @Date 2019-01-22 11:02
          */
-        public void Predict(Instances train, Instances test, int numofCla,int iterator) throws Exception {
+        public void Predict(Instances train, Instances test, int numofCla,int fold) throws Exception {
 
             predict_1.clear();
             real_1.clear();
+
+//            String path = "/Users/cuiwei/experiment/k="+10+"/fold"+fold;
+//            Caculator c = new Caculator();
+//            Instances tep = new Instances(test,0);
 
             train.setClassIndex(train.numAttributes()-1);
             test.setClassIndex(test.numAttributes()-1);
             AdaBoostM1 adaclassifier = new AdaBoostM1();
             Bagging bagclassifier = new Bagging();
             J48 baseClassifier = new J48();
-//            RandomForest baseClassifier = new RandomForest();
             Measure m = new Measure();
             DataTransform df = new DataTransform();
+
 
             adaclassifier.setClassifier( baseClassifier );
             bagclassifier.setClassifier(baseClassifier);
             bagclassifier.buildClassifier(train);
             adaclassifier.buildClassifier( train );
 
+
             double[] predictions = new double[numofCla];
             double[] Real = new double[numofCla];
+
+
 
             int count = 0;
             m.reset();
             for(int i = 0;i<test.numInstances();i++) {
+//                if(adaclassifier.classifyInstance(test.instance(i))==test.instance(i).classValue())
+//                    tep.add(test.instance(i));
 
                 predictions[count] = adaclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
@@ -131,6 +154,8 @@ public class Prediction {
                     count1(Real);
                     boolean[] predict_label = df.toBool(predictions);
                     boolean[] real_label = df.toBool(Real);
+                    pre.add(predict_label);
+                    real.add(real_label);
                     count = 0;
                     m.Accuracy(predict_label, real_label);
                     m.Recall(predict_label, real_label);
@@ -140,6 +165,8 @@ public class Prediction {
                     count++;
             }
 
+//            c.generateArffFile(tep,path);
+//            tep = new Instances(test,0);
 
             AvgCorrect += m.getValue("-A");
             Precision += m.getValue("-P");
@@ -148,7 +175,8 @@ public class Prediction {
             m.reset();
 
             for(int i = 0;i<test.numInstances();i++) {
-
+//                if(bagclassifier.classifyInstance(test.instance(i))!=test.instance(i).classValue())
+//                    tep.add(test.instance(i));
                 predictions[count] = bagclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
                 if(count == numofCla-1) {
@@ -164,6 +192,7 @@ public class Prediction {
                 }else
                     count++;
             }
+//            c.generateArffFile(tep,path);
 
             AvgCorrect2 += m.getValue("-A");
             Precision2 += m.getValue("-P");
