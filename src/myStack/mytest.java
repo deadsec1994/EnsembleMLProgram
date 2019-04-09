@@ -18,7 +18,7 @@ public class mytest {
 //	        MultiLabelInstances data_test = null;
 	        data_train = new MultiLabelInstances(arffFile_train, xmlFile_train);  
 //	        data_test = new MultiLabelInstances(arffFile_test, xmlFile_test);  
-	        Evaluator eval = new Evaluator();  
+	        output eval = new output();
 	        MultipleEvaluation results;
 	        MLkNN mlknn=new MLkNN();   
 	        mlknn.build(data_train);  
