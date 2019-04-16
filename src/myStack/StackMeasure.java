@@ -23,7 +23,7 @@ public class StackMeasure {
         Caculator get = new Caculator();
         int numofcla = dataset.getNumLabels();
         int[] labelIndices = dataset.getLabelIndices();
-        int neighbour = 5;
+
         workingSet.randomize(new Random(1));
 
 
@@ -32,19 +32,27 @@ public class StackMeasure {
             Instances test = workingSet.testCV(10, fold);
             double[][] OutTestData = get.getlabels(labelIndices, test);
             double[][] OutTrainData = get.getlabels(labelIndices, train);
+            int neighbour = 1;
 
             for (int ptime = 0; ptime < 10; ptime++) {
                 Instances newdata = get.getTrainingSet(ptime, train, 1);  //抽样
                 MultiLabelInstances mlTrain = new MultiLabelInstances(newdata, dataset.getLabelsMetaData());
-                MLkNN mlknn = new MLkNN(neighbour,1);
+//                MLkNN mlknn = new MLkNN(neighbour,1);
+                MLkNN mlknn = new MLkNN();
+
                 mlknn.build(mlTrain);
 
                 OutTrainData = get.Predictionresult(mlknn, numofcla, train, OutTrainData, ptime);
                 OutTestData = get.Predictionresult(mlknn, numofcla, test, OutTestData, ptime);
-                neighbour +=3;
+                neighbour +=1;
+
             }
             //创建新数据集保存结果
+            MLkNN mlknn = new MLkNN();
+            mlknn.build(new MultiLabelInstances(train, dataset.getLabelsMetaData()));
 
+
+            double[] mlknnpre = get.Predictionresult(mlknn,numofcla,test);
             Instances worksetTrain = get.creatnewInstance(OutTrainData);
             Instances worksetTest = get.creatnewInstance(OutTestData);
 
@@ -64,20 +72,19 @@ public class StackMeasure {
 //                file1.createNewFile();
 //            FileWriter out1 = new FileWriter(file1, true);
 
-
             //类标签平衡
             MyClassBalancer classfilter = new MyClassBalancer();
             Instances balan = classfilter.process(worksetTrain);
 
-            p.Predict(balan, worksetTest, numofcla);
+            p.Predict(worksetTrain, worksetTest, numofcla,fold,mlknnpre);
 
             System.out.println("fold:" + fold);
         }
 
-        ArrayList<boolean[]> pre = p.getArray("p");
-        ArrayList<boolean[]> real = p.getArray("");
-        output ot = new output();
-        ot.outpre(pre,real);
+//        ArrayList<boolean[]> pre = p.getArray("p");
+//        ArrayList<boolean[]> real = p.getArray("");
+//        output ot = new output();
+//        ot.outpre(pre,real);
 
         double[] Adamesaure = p.getvalue("-A");
         double[] Bagmesaure = p.getvalue("-B");

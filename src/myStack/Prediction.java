@@ -3,6 +3,8 @@ package myStack;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
+import weka.core.Attribute;
+import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
@@ -111,12 +113,25 @@ public class Prediction {
          * @Author cuiwei
          * @Date 2019-01-22 11:02
          */
-        public void Predict(Instances train, Instances test, int numofCla) throws Exception {
+        public void Predict(Instances train, Instances test, int numofCla,int fold,double[] mlknnpre) throws Exception {
 
             predict_1.clear();
             real_1.clear();
 
-            String path = "/Users/cuiwei/experiment/k=/"+5+"/fold10/";
+            String path = "/Users/cuiwei/experiment/k=10/fold"+fold+"/Prediction";
+            Caculator c = new Caculator();
+            Instances tep = new Instances(test,0);
+            Attribute mypre1 = new Attribute("adapre");
+            Attribute mypre2 = new Attribute("bagpre");
+            Attribute mlknn = new Attribute("mlknnpre");
+
+            tep.insertAttributeAt(mypre1,tep.numAttributes());
+            tep.insertAttributeAt(mypre2,tep.numAttributes());
+            tep.insertAttributeAt(mlknn,tep.numAttributes());
+
+
+            System.out.println(tep.numAttributes());
+
 
             train.setClassIndex(train.numAttributes()-1);
             test.setClassIndex(test.numAttributes()-1);
@@ -125,8 +140,6 @@ public class Prediction {
             J48 baseClassifier = new J48();
             Measure m = new Measure();
             DataTransform df = new DataTransform();
-            Caculator c = new Caculator();
-            Instances tep = new Instances(test,0);
 
             adaclassifier.setClassifier( baseClassifier );
             bagclassifier.setClassifier(baseClassifier);
@@ -142,15 +155,22 @@ public class Prediction {
             int count = 0;
             m.reset();
             for(int i = 0;i<test.numInstances();i++) {
-                if(adaclassifier.classifyInstance(test.instance(i))!=test.instance(i).classValue())
-                    tep.add(test.instance(i));
+//                if(adaclassifier.classifyInstance(test.instance(i))!=test.instance(i).classValue())
+                Instance out = new DenseInstance(tep.numAttributes());
+                for(int j=0;j<test.numAttributes();j++){
+                    out.setValue(j,test.instance(i).value(j));
+                }
+                out.setValue(out.numAttributes()-3,adaclassifier.classifyInstance(test.instance(i)));
+                out.setValue(out.numAttributes()-1,mlknnpre[i]);
+
+                tep.add(out);
 
                 predictions[count] = adaclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
 
                 if(count == numofCla-1) {
-                    count1(predictions,"P");
-                    count1(Real);
+//                    count1(predictions,"P");
+//                    count1(Real);
                     boolean[] predict_label = df.toBool(predictions);
                     boolean[] real_label = df.toBool(Real);
                     pre.add(predict_label);
@@ -164,7 +184,7 @@ public class Prediction {
                     count++;
             }
 
-            c.generateArffFile(tep,path);
+//            c.generateArffFile(tep,path);
 //            tep = new Instances(test,0);
 
             AvgCorrect += m.getValue("-A");
@@ -176,6 +196,8 @@ public class Prediction {
             for(int i = 0;i<test.numInstances();i++) {
 //                if(bagclassifier.classifyInstance(test.instance(i))!=test.instance(i).classValue())
 //                    tep.add(test.instance(i));
+                tep.instance(i).setValue(tep.numAttributes()-2,bagclassifier.classifyInstance(test.instance(i)));
+
                 predictions[count] = bagclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
                 if(count == numofCla-1) {
@@ -191,7 +213,7 @@ public class Prediction {
                 }else
                     count++;
             }
-//            c.generateArffFile(tep,path);
+            c.generateArffFile(tep,path);
 
             AvgCorrect2 += m.getValue("-A");
             Precision2 += m.getValue("-P");

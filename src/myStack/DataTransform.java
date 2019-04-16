@@ -58,6 +58,16 @@ public class DataTransform {
 		}
 		return bipartition;
 	}
+	public double[] todouble(boolean[] data) {
+		double[] bipartition = new double[data.length];
+		for(int i=0;i<data.length;i++) {
+			if(data[i]) {
+				bipartition[i] = 1;
+			} else
+				bipartition[i] = 0;
+		}
+		return bipartition;
+	}
 	
 
 }

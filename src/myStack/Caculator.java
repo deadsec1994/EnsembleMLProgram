@@ -68,6 +68,10 @@ public class Caculator {
     }
 
 
+
+    ArrayList<boolean[]> pre = new ArrayList<>();
+    double[] pre1d = null;
+
     /**
      * @Description TODO
      * @param learner 分类器
@@ -95,8 +99,34 @@ public class Caculator {
         }
         return output;
     }
+    public double[] Predictionresult (MultiLabelLearner learner, int numcla, Instances test) throws Exception{
+        int count = 0;
+        DataTransform df = new DataTransform();
+//        ArrayList<double[]> chance = new ArrayList<>();
+        for (int j = 0; j < test.numInstances(); j++) {
+            Instance tmp = test.instance(j);
+            MultiLabelOutput mlo = learner.makePrediction(tmp);
+//            double[] confident1d = mlo.getConfidences();
+            boolean[] pred = mlo.getBipartition();
+            pre.add(pred);
+//            chance.add(confident1d);
+        }
+            //获取mlknn预测结果
+            boolean[][] pre2b = pre.toArray(new boolean[pre.size()][numcla]);
+            double[][] pre2d = new double[pre.size()][numcla];
+            int count2 = 0;
+            for (boolean[] element : pre2b) {
+                pre2d[count2++] = df.todouble(element);
+            }
+            pre1d = reverse(pre2d);
+            //---------------------------//
 
+        return pre1d;
+    }
 
+    public double[] getPre1d(){
+        return pre1d;
+    }
     /**
      * @Description TODO
      * @param conv  第二层数据矩阵
@@ -164,7 +194,7 @@ public class Caculator {
      * @Author cuiwei
      * @Date 2019-02-22 16:53
      */
-    public static void generateArffFile(Instances instances, String path) {
+    public void generateArffFile(Instances instances, String path) {
         ArffSaver saver = new ArffSaver();
         saver.setInstances(instances);
         try {
