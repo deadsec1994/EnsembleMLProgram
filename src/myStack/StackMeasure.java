@@ -12,8 +12,8 @@ public class StackMeasure {
 
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
-        String arffFile_data = "/Users/cuiwei/experiment/data/emotions.arff";
-        String xmlFile_data = "/Users/cuiwei/experiment/data/emotions.xml";
+        String arffFile_data = "/Users/cuiwei/experiment/data/scene.arff";
+        String xmlFile_data = "/Users/cuiwei/experiment/data/scene.xml";
 
         MultiLabelInstances dataset = null;
         ImportsData id = new ImportsData();
@@ -44,7 +44,7 @@ public class StackMeasure {
 
                 OutTrainData = get.Predictionresult(mlknn, numofcla, train, OutTrainData, ptime);
                 OutTestData = get.Predictionresult(mlknn, numofcla, test, OutTestData, ptime);
-                neighbour +=1;
+//                neighbour +=1;
 
             }
             //创建新数据集保存结果

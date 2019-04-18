@@ -130,7 +130,7 @@ public class Prediction {
             tep.insertAttributeAt(mlknn,tep.numAttributes());
 
 
-            System.out.println(tep.numAttributes());
+//            System.out.println(tep.numAttributes());
 
 
             train.setClassIndex(train.numAttributes()-1);
@@ -184,9 +184,6 @@ public class Prediction {
                     count++;
             }
 
-//            c.generateArffFile(tep,path);
-//            tep = new Instances(test,0);
-
             AvgCorrect += m.getValue("-A");
             Precision += m.getValue("-P");
             Recall += m.getValue("-R");
@@ -213,7 +210,7 @@ public class Prediction {
                 }else
                     count++;
             }
-            c.generateArffFile(tep,path);
+//            c.generateArffFile(tep,path);
 
             AvgCorrect2 += m.getValue("-A");
             Precision2 += m.getValue("-P");
