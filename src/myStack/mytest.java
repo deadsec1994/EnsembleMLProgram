@@ -18,10 +18,11 @@ public class mytest {
 //	        MultiLabelInstances data_test = null;
 	        data_train = new MultiLabelInstances(arffFile_train, xmlFile_train);  
 //	        data_test = new MultiLabelInstances(arffFile_test, xmlFile_test);  
-	        output eval = new output();
+//	        output eval = new output();
+			Evaluator eval = new Evaluator();
 	        MultipleEvaluation results;
 	        MLkNN mlknn=new MLkNN();   
-	        mlknn.build(data_train);  
+//	        mlknn.build(data_train);
 //	        results=eval.evaluate(mlknn,data_test,data_train);  
 	        results = eval.crossValidate(mlknn, data_train,10);
 	        System.out.println(results);

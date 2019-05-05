@@ -2,28 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40d69d91-4b0e-4791-b8b1-a9aba7d4aa0a" name="Default Changelist" comment="version 2。 Balance Class，but result not good">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/weka.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/META-INF/BaseMLknn-Stacking.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Caculator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/DataTransform.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/ImportsData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Measure.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/MyClassBalancer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Mylnnsearch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Prediction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/StackMeasure.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/mytest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/META-INF/BaseMLknn-Stacking.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/myStack/CaculatorTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/myStack/MeasureTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/myStack/MyClassBalancerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaseMLknn-Stacking.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EnsembleMLProgram.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myStack/MyClassBalancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myStack/MyClassBalancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/META-INF/BaseMLknn-Stacking.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Caculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/DataTransform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/ImportsData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Measure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/MyClassBalancer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Mylnnsearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/Prediction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/StackMeasure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BaseMLknn-Stacking/myStack/mytest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/META-INF/BaseMLknn-Stacking.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/myStack/CaculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/myStack/MeasureTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/BaseMLknn-Stacking/myStack/MyClassBalancerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myStack/StackMeasure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myStack/StackMeasure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/myStack/mytest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myStack/mytest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,13 +43,79 @@
     <expand />
     <select />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myStack/StackMeasure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+            <state relative-caret-position="435">
+              <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myStack/output.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="25" column="37" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myStack/Caculator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2684">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myStack/Prediction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="178" column="30" selection-start-line="178" selection-start-column="22" selection-end-line="178" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/myStack/Measure.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myStack/DataTransform.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1386">
+              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myStack/MyClassBalancer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,7 +145,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="少数类过抽样" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -91,11 +154,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/myStack/findNeighbour.java" />
         <option value="$PROJECT_DIR$/src/Test/StackMeasureTest.java" />
-        <option value="$PROJECT_DIR$/src/myStack/DataTransform.java" />
-        <option value="$PROJECT_DIR$/src/myStack/Prediction.java" />
         <option value="$PROJECT_DIR$/Test/myStack/StackMeasureTest.java" />
         <option value="$PROJECT_DIR$/src/myStack/ImportsData.java" />
-        <option value="$PROJECT_DIR$/src/myStack/mytest.java" />
         <option value="$PROJECT_DIR$/src/myStack/Measure.java" />
         <option value="$PROJECT_DIR$/src/myStack/choicesort.java" />
         <option value="$PROJECT_DIR$/src/myStack/SingleLinkedList.java" />
@@ -103,13 +163,18 @@
         <option value="$PROJECT_DIR$/Test/Test/StackMeasureTest.java" />
         <option value="$PROJECT_DIR$/src/myStack/getlabels.java" />
         <option value="$PROJECT_DIR$/Test/myStack/getlabelsTest.java" />
-        <option value="$PROJECT_DIR$/src/myStack/StackMeasure.java" />
-        <option value="$PROJECT_DIR$/src/myStack/Caculator.java" />
         <option value="$PROJECT_DIR$/Test/myStack/CaculatorTest.java" />
         <option value="$PROJECT_DIR$/Test/myStack/MyClassBalancerTest.java" />
         <option value="$PROJECT_DIR$/Test/myStack/MeasureTest.java" />
         <option value="$PROJECT_DIR$/src/myStack/ali.java" />
         <option value="$PROJECT_DIR$/src/myStack/MyClassBalancer.java" />
+        <option value="$PROJECT_DIR$/src/myStack/DataTransform.java" />
+        <option value="$PROJECT_DIR$/src/myStack/Caculator.java" />
+        <option value="$PROJECT_DIR$/src/myStack/tongjibujunheng.java" />
+        <option value="$PROJECT_DIR$/src/myStack/Prediction.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/myStack/mytest.java" />
+        <option value="$PROJECT_DIR$/src/myStack/StackMeasure.java" />
       </list>
     </option>
   </component>
@@ -129,19 +194,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="BaseMLknn-Stacking" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BaseMLknn-Stacking" type="462c0819:PsiDirectoryNode" />
+              <item name="EnsembleMLProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EnsembleMLProgram" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EnsembleMLProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EnsembleMLProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EnsembleMLProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EnsembleMLProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="myStack" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -149,9 +225,10 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553500821410" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555757988487" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -164,7 +241,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -187,7 +264,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MyClassBalancerTest.processTest">
+  <component name="RunManager" selected="Application.StackMeasure">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="EnsembleMLProgram" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StackMeasure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="myStack.StackMeasure" />
       <module name="EnsembleMLProgram" />
@@ -201,8 +285,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mytest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="mytest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="myStack.mytest" />
+      <module name="EnsembleMLProgram" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="myStack.*" />
@@ -213,7 +298,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyClassBalancerTest.processTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MeasureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EnsembleMLProgram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="myStack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="myStack" />
+      <option name="MAIN_CLASS_NAME" value="myStack.MeasureTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyClassBalancerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EnsembleMLProgram" />
       <extension name="coverage">
         <pattern>
@@ -223,50 +323,18 @@
       </extension>
       <option name="PACKAGE_NAME" value="myStack" />
       <option name="MAIN_CLASS_NAME" value="myStack.MyClassBalancerTest" />
-      <option name="METHOD_NAME" value="processTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StackMeasureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EnsembleMLProgram" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.StackMeasureTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StackMeasureTest.reverseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EnsembleMLProgram" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Test" />
-      <option name="MAIN_CLASS_NAME" value="Test.StackMeasureTest" />
-      <option name="METHOD_NAME" value="reverseTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MyClassBalancerTest.processTest" />
-        <item itemvalue="JUnit.StackMeasureTest.reverseTest" />
-        <item itemvalue="JUnit.StackMeasureTest" />
         <item itemvalue="Application.StackMeasure" />
-        <item itemvalue="Application.mytest (1)" />
+        <item itemvalue="Application.mytest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MyClassBalancerTest" />
+        <item itemvalue="JUnit.MeasureTest" />
       </list>
     </recent_temporary>
   </component>
@@ -298,6 +366,22 @@
       <workItem from="1553072163262" duration="9643000" />
       <workItem from="1553252766422" duration="2031000" />
       <workItem from="1553497394302" duration="2729000" />
+      <workItem from="1555205840841" duration="3452000" />
+      <workItem from="1555316545419" duration="3588000" />
+      <workItem from="1555336036561" duration="21652000" />
+      <workItem from="1555552300532" duration="4611000" />
+      <workItem from="1555682075789" duration="2387000" />
+      <workItem from="1555740118796" duration="4821000" />
+      <workItem from="1555843126467" duration="116000" />
+      <workItem from="1555843427349" duration="46000" />
+      <workItem from="1555843501006" duration="5000" />
+      <workItem from="1555916786133" duration="1154000" />
+      <workItem from="1555922451313" duration="2221000" />
+      <workItem from="1556088044102" duration="11064000" />
+      <workItem from="1556260464774" duration="899000" />
+      <workItem from="1556431819877" duration="205000" />
+      <workItem from="1556527415342" duration="312000" />
+      <workItem from="1557040468712" duration="889000" />
     </task>
     <task id="LOCAL-00001" summary="version1.0 BaseMlknn Stacking">
       <created>1547800072246</created>
@@ -376,31 +460,24 @@
       <option name="project" value="LOCAL" />
       <updated>1553499709546</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="添加了对比mlknn，adaboost和Bagging的模块（转换成数据集输出）">
+      <created>1555406982116</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555406982116</updated>
+    </task>
+    <task id="LOCAL-00013" summary="输出对比结果以及10neighbour 集成">
+      <created>1555555439272</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555555439273</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 41m 55s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 42m 12s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 43m 06s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 47m 25s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 47m 57s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 54m 08s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 56m 49s.xml">
-      <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MyClassBalancerTest_processTest - 2019.03.20 at 20h 57m 21s.xml">
       <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
     </history-entry>
@@ -410,9 +487,30 @@
     <history-entry file="MyClassBalancerTest_processTest - 2019.03.25 at 15h 44m 39s.xml">
       <configuration name="MyClassBalancerTest.processTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CaculatorTest - 2019.04.09 at 21h 09m 13s.xml">
+      <configuration name="CaculatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MeasureTest - 2019.04.09 at 21h 09m 54s.xml">
+      <configuration name="MeasureTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyClassBalancerTest - 2019.04.09 at 21h 09m 59s.xml">
+      <configuration name="MyClassBalancerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyClassBalancerTest - 2019.04.09 at 21h 10m 39s.xml">
+      <configuration name="MyClassBalancerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CaculatorTest - 2019.04.22 at 15h 18m 18s.xml">
+      <configuration name="CaculatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MeasureTest - 2019.04.22 at 15h 18m 25s.xml">
+      <configuration name="MeasureTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MyClassBalancerTest - 2019.04.22 at 15h 18m 31s.xml">
+      <configuration name="MyClassBalancerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167333000" />
+    <option name="totallyTimeSpent" value="228008000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -425,30 +523,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972875" visible="true" weight="0.18437119" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972875" visible="true" weight="0.23321123" />
       <window_info id="Structure" order="1" sideWeight="0.5027125" side_tool="true" weight="0.17521368" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="GitHub Pull Requests" weight="0.3291536" />
       <window_info anchor="bottom" id="Dependency Viewer" order="0" weight="0.3297362" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32810867" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.497558" weight="0.2863114" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4981685" weight="0.30407524" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.496337" weight="0.28526646" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.4981685" visible="true" weight="0.30198538" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32853717" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32810867" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.24764891" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32853717" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.502442" side_tool="true" weight="0.2863114" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32810867" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.503663" side_tool="true" weight="0.28526646" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.3291536" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.33646813" />
+      <window_info anchor="bottom" id="GitHub Pull Requests" order="15" weight="0.3291536" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -464,23 +563,69 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="version1.0 BaseMlknn Stacking" />
     <MESSAGE value="version 2。 fix problem.平衡训练数据类别错误" />
     <MESSAGE value="new branch" />
     <MESSAGE value="version 2。 Balance Class，but result not good" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 2。 Balance Class，but result not good" />
+    <MESSAGE value="添加了对比mlknn，adaboost和Bagging的模块（转换成数据集输出）" />
+    <MESSAGE value="输出对比结果以及10neighbour 集成" />
+    <option name="LAST_COMMIT_MESSAGE" value="输出对比结果以及10neighbour 集成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/core/Instances.java</url>
-          <line>2280</line>
-          <properties class="weka.core.Instances" method="swap">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="20" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/myStack/mytest.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/Evaluator.java</url>
+          <line>361</line>
+          <properties />
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/MultipleEvaluation.java</url>
+          <line>148</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/Evaluator.java</url>
+          <line>346</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/myStack/StackMeasure.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/myStack/Measure.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -490,62 +635,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/filters/SimpleFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="121" lean-forward="true" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/filters/unsupervised/attribute/NumericToNominal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="443" column="13" selection-start-line="443" selection-start-column="4" selection-end-line="443" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/core/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="1666" selection-start-line="1666" selection-end-line="1666" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/filters/SimpleBatchFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="311" column="20" lean-forward="true" selection-start-line="311" selection-start-column="20" selection-end-line="311" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/filters/Filter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="894" column="53" selection-start-line="894" selection-start-column="53" selection-end-line="894" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/core/neighboursearch/LinearNNSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="233" selection-start-line="233" selection-end-line="233" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/data/MultiLabelInstances.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/weka.jar!/weka/filters/Filter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18838">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/weka.jar!/weka/filters/supervised/instance/Resample.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-684">
@@ -564,13 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="494" selection-start-line="494" selection-end-line="494" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/MultipleEvaluation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="80" column="59" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -638,13 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myStack/mytest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/measure/ClassificationMeasureBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -661,13 +736,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myStack/choicesort.java" />
     <entry file="file://$PROJECT_DIR$/src/myStack/ListNode.java" />
-    <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/Evaluator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="134" column="55" selection-start-line="134" selection-start-column="55" selection-end-line="134" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/Test/StackMeasureTest.java" />
     <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/classifier/MultiLabelLearnerBase.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -692,8 +760,8 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/classifier/lazy/MLkNN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="225" column="37" selection-start-line="225" selection-start-column="37" selection-end-line="225" selection-end-column="37" />
+        <state relative-caret-position="-15">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
         </state>
       </provider>
     </entry>
@@ -740,33 +808,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myStack/Measure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2794">
-          <caret line="139" column="39" selection-start-line="139" selection-start-column="39" selection-end-line="139" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myStack/ali.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myStack/Caculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="88" column="36" lean-forward="true" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/ali.java" />
     <entry file="jar:///Applications/weka-3-8-3/weka-src.jar!/src/main/java/weka/filters/supervised/attribute/AttributeSelection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12166">
@@ -798,17 +840,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/myStack/MeasureTest.java">
+    <entry file="file://$PROJECT_DIR$/src/myStack/ImportsData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="1017">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weka.jar!/weka/core/AbstractInstance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weka.jar!/weka/core/Instance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/weka.jar!/weka/core/DenseInstance.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/tongjibujunheng.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/myStack/CaculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        <state relative-caret-position="404">
+          <caret line="54" column="51" lean-forward="true" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -817,42 +890,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test/myStack/MyClassBalancerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="379">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myStack/Prediction.java">
+    <entry file="file://$PROJECT_DIR$/Test/myStack/MeasureTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="866">
-          <caret line="163" column="28" selection-start-line="163" selection-start-column="28" selection-end-line="163" selection-end-column="28" />
+        <state relative-caret-position="220">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/Evaluation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/MultipleEvaluation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="137" column="27" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/mulan-src.jar!/mulan/evaluation/Evaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="346" column="32" lean-forward="true" selection-start-line="346" selection-start-column="32" selection-end-line="346" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/output.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/Caculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2684">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/DataTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myStack/MyClassBalancer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state relative-caret-position="198">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myStack/ImportsData.java">
+    <entry file="file://$PROJECT_DIR$/src/myStack/mytest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1017">
-          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+        <state relative-caret-position="357">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myStack/StackMeasure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        <state relative-caret-position="435">
+          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/Prediction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="178" column="30" selection-start-line="178" selection-start-column="22" selection-end-line="178" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myStack/Measure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -933,6 +1071,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>weka</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -12,8 +12,8 @@ public class StackMeasure {
 
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
-        String arffFile_data = "/Users/cuiwei/experiment/data/scene.arff";
-        String xmlFile_data = "/Users/cuiwei/experiment/data/scene.xml";
+        String arffFile_data = "/Users/cuiwei/experiment/data/emotions.arff";
+        String xmlFile_data = "/Users/cuiwei/experiment/data/emotions.xml";
 
         MultiLabelInstances dataset = null;
         ImportsData id = new ImportsData();
@@ -56,28 +56,13 @@ public class StackMeasure {
             Instances worksetTrain = get.creatnewInstance(OutTrainData);
             Instances worksetTest = get.creatnewInstance(OutTestData);
 
-
-            //数据集输出
-//			 String trainpath = "/Users/cuiwei/experiment/knnsearch/scene/c="+fold+"/train.arff";
-//			 String testpath = "/Users/cuiwei/experiment/knnsearch/scene/c="+fold+"/test.arff";
-//			 generateArffFile(worksetTrain,trainpath);
-//			 generateArffFile(worksetTest,testpath);
-
-//            String trainpath = "/Users/cuiwei/experiment/knnsearch/scene/c=" + fold;
-//            File file1dir = new File(trainpath);
-//            File file1 = new File(file1dir, "AdaCount_1.txt");
-//            if (!file1dir.isDirectory())
-//                file1dir.mkdir();
-//            if (!file1.isFile())
-//                file1.createNewFile();
-//            FileWriter out1 = new FileWriter(file1, true);
-
             //类标签平衡
             MyClassBalancer classfilter = new MyClassBalancer();
             Instances balan = classfilter.process(worksetTrain);
 
             p.Predict(worksetTrain, worksetTest, numofcla,fold,mlknnpre);
-
+            //0.045341,0.025106,0.024379,0.015278,0.376713,0.174438,0.10968,0.015391,0.005591,0.270415,0
+            //0.944109,0.75497,0.93934,0.940507,0.828324,0.795575,0.908092,0.752403,0.634688,0.536323,1
             System.out.println("fold:" + fold);
         }
 
