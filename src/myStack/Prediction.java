@@ -173,14 +173,14 @@ public class Prediction {
             m.reset();
             for(int i = 0;i<test.numInstances();i++) {
 //                if(adaclassifier.classifyInstance(test.instance(i))!=test.instance(i).classValue())
-                Instance out = new DenseInstance(tep.numAttributes());
-                for(int j=0;j<test.numAttributes();j++){
-                    out.setValue(j,test.instance(i).value(j));
-                }
-                out.setValue(out.numAttributes()-3,adaclassifier.classifyInstance(test.instance(i)));
-                out.setValue(out.numAttributes()-1,mlknnpre[i]);
-
-                tep.add(out);
+//                Instance out = new DenseInstance(tep.numAttributes());
+//                for(int j=0;j<test.numAttributes();j++){
+//                    out.setValue(j,test.instance(i).value(j));
+//                }
+//                out.setValue(out.numAttributes()-3,adaclassifier.classifyInstance(test.instance(i)));
+//                out.setValue(out.numAttributes()-1,mlknnpre[i]);
+//
+//                tep.add(out);
 
                 predictions[count] = adaclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();
