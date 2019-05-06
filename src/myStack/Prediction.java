@@ -4,16 +4,18 @@ import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
 import weka.core.Attribute;
-import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Prediction {
         /*
          * 定义评价指标
          */
+
         double HammingLoss1 = 0;
         double AvgCorrect = 0;
         double Precision = 0;
@@ -114,54 +116,36 @@ public class Prediction {
          * @Date 2019-01-22 11:02
          */
         public void Predict(Instances train, Instances test, int numofCla,int fold,double[] mlknnpre) throws Exception {
-            /*
-            train
-            0.045341,0.025106,0.024379,0.015278,0.376713,0.174438,0.10968,0.015391,0.005591,0.270415,0
-            0.028207,0.136212,0.050046,0.048532,0.040602,0.08031,0.132373,0.021521,0.079634,0.105531,0
-            0.944109,0.75497,0.93934,0.940507,0.828324,0.795575,0.908092,0.752403,0.634688,0.536323,1
 
-
-            (11)0.027589,0.018247,0.008684,0.014685,0.018888,0.026138,0.011102,0.022784,0.021678,0.010472,0
-            test
-            0.045341,0.025106,0.176511,0.228101,0.342336,0.24772,0.319404,0.20693,0.477911,0.086322,0
-            0.230927,0.217516,0.099924,0.301603,0.040602,0.354309,0.132373,0.021521,0.079634,0.105531,0
-            0.781521,0.75497,0.610887,0.548043,0.679403,0.695621,0.520809,0.573102,0.430953,0.536323,1
-
-            0.093567,0.20781,0.354212,0.17536,0.350701,0.213711,0.291205,0.518699,0.428502,0.149705,0
-
-            (11)0.027589,0.018247,0.008684,0.014685,0.018888,0.026138,0.011102,0.022784,0.021678,0.010472,0
-             */
             predict_1.clear();
             real_1.clear();
 
-            String path = "/Users/cuiwei/experiment/k=10/fold"+fold+"/Prediction";
-            Caculator c = new Caculator();
-            Instances tep = new Instances(test,0);
-            Attribute mypre1 = new Attribute("adapre");
-            Attribute mypre2 = new Attribute("bagpre");
-            Attribute mlknn = new Attribute("mlknnpre");
-
-
-            tep.insertAttributeAt(mypre1,tep.numAttributes());
-            tep.insertAttributeAt(mypre2,tep.numAttributes());
-            tep.insertAttributeAt(mlknn,tep.numAttributes());
+//            String path = "/Users/cuiwei/experiment/k=10/fold"+fold+"/Prediction";
+//            Caculator c = new Caculator();
+//            Instances tep = new Instances(test,0);
+//            Attribute mypre1 = new Attribute("adapre");
+//            Attribute mypre2 = new Attribute("bagpre");
+//            Attribute mlknn = new Attribute("mlknnpre");
+//
+//
+//            tep.insertAttributeAt(mypre1,tep.numAttributes());
+//            tep.insertAttributeAt(mypre2,tep.numAttributes());
+//            tep.insertAttributeAt(mlknn,tep.numAttributes());
 
 
 //            System.out.println(tep.numAttributes());
 
-
-            train.setClassIndex(train.numAttributes()-1);
-            test.setClassIndex(test.numAttributes()-1);
+//
+//            train.setClassIndex(train.numAttributes()-1);
+//            test.setClassIndex(test.numAttributes()-1);
             AdaBoostM1 adaclassifier = new AdaBoostM1();
             Bagging bagclassifier = new Bagging();
             J48 baseClassifier = new J48();
             Measure m = new Measure();
             DataTransform df = new DataTransform();
 
-            adaclassifier.setClassifier( baseClassifier );
-            bagclassifier.setClassifier(baseClassifier);
-            bagclassifier.buildClassifier(train);
-            adaclassifier.buildClassifier( train );
+            adaclassifier.setClassifier(baseClassifier);
+            adaclassifier.buildClassifier(train);
 
 
             double[] predictions = new double[numofCla];
@@ -207,10 +191,10 @@ public class Prediction {
             HammingLoss1 += m.getValue("-H");
             m.reset();
 
+
+            bagclassifier.setClassifier(baseClassifier);
+            bagclassifier.buildClassifier(train);
             for(int i = 0;i<test.numInstances();i++) {
-//                if(bagclassifier.classifyInstance(test.instance(i))!=test.instance(i).classValue())
-//                    tep.add(test.instance(i));
-                tep.instance(i).setValue(tep.numAttributes()-2,bagclassifier.classifyInstance(test.instance(i)));
 
                 predictions[count] = bagclassifier.classifyInstance(test.instance(i));
                 Real[count] = test.instance(i).classValue();

@@ -4,7 +4,6 @@ import mulan.classifier.lazy.MLkNN;
 import mulan.data.MultiLabelInstances;
 import weka.core.Instances;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -35,7 +34,7 @@ public class StackMeasure {
             int neighbour = 1;
 
             for (int ptime = 0; ptime < 10; ptime++) {
-                Instances newdata = get.getTrainingSet(ptime, train, 1);  //抽样
+                Instances newdata = get.getTrainingSet(ptime, train, 1+ptime);  //抽样,每次抽样相同，伪随机已验证
                 MultiLabelInstances mlTrain = new MultiLabelInstances(newdata, dataset.getLabelsMetaData());
 //                MLkNN mlknn = new MLkNN(neighbour,1);
                 MLkNN mlknn = new MLkNN();
@@ -56,13 +55,12 @@ public class StackMeasure {
             Instances worksetTrain = get.creatnewInstance(OutTrainData);
             Instances worksetTest = get.creatnewInstance(OutTestData);
 
+
             //类标签平衡
             MyClassBalancer classfilter = new MyClassBalancer();
-            Instances balan = classfilter.process(worksetTrain);
+            Instances balan = classfilter.process(worksetTrain,fold);
 
-            p.Predict(worksetTrain, worksetTest, numofcla,fold,mlknnpre);
-            //0.045341,0.025106,0.024379,0.015278,0.376713,0.174438,0.10968,0.015391,0.005591,0.270415,0
-            //0.944109,0.75497,0.93934,0.940507,0.828324,0.795575,0.908092,0.752403,0.634688,0.536323,1
+            p.Predict(balan, worksetTest, numofcla,fold,mlknnpre);
             System.out.println("fold:" + fold);
         }
 

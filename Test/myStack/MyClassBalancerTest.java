@@ -58,7 +58,7 @@ public class MyClassBalancerTest {
         intances.setClassIndex(intances.numAttributes()-1);
 
 
-        Instances result = bla.process(intances);
+        Instances result = bla.process(intances,0);
         double[] re = new double[4];
         for(int i=0;i<4;i++){
             re[i] = result.instance(i).classValue();

@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Caculator {
+
+    private final static Double EPSILON = 0.000001;
+
     /**
      * @Description TODO 对多标签数据集获取标签并变为一列
      * @param labelIndices 标签位置索引
@@ -203,5 +206,36 @@ public class Caculator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    /**
+     * @Description 比较2个数据集是否相等
+     * @param a dataset
+     * @param b dataset
+     * @Return boolean
+     * @Author cuiwei
+     * @Date 2019-05-06 16:04
+     */
+    public boolean compareInstances (Instances a,Instances b) throws Exception{
+        if(a.numAttributes()!=b.numAttributes()) {
+            throw new Exception("numAttributes not equal!");
+        }
+        if(a.numInstances()!=b.numInstances()){
+            throw new Exception("numInstances not equal!");
+        }
+        boolean flag = true;
+        for(int i=0;i<a.numInstances();i++){
+            Instance t1 = a.instance(i);
+            Instance t2 = b.instance(i);
+            for(int j=0;j<a.numAttributes();j++){
+                double temp1 = t1.value(j);
+                double temp2 = t2.value(j);
+                if(Math.abs(temp1 - temp2) < EPSILON)
+                    continue;
+                else{
+                    flag = false;
+                }
+            }
+        }
+        return flag;
     }
 }
