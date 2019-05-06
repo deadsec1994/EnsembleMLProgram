@@ -3,12 +3,8 @@ package myStack;
 import weka.classifiers.meta.AdaBoostM1;
 import weka.classifiers.meta.Bagging;
 import weka.classifiers.trees.J48;
-import weka.core.Attribute;
-import weka.core.Instance;
 import weka.core.Instances;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Prediction {
@@ -20,7 +16,6 @@ public class Prediction {
         double AvgCorrect = 0;
         double Precision = 0;
         double Recall = 0;
-//        double F_Measure = 0;
 
 
         ArrayList<boolean[]> pre = new ArrayList<>();
@@ -31,7 +26,6 @@ public class Prediction {
         double AvgCorrect2 = 0;
         double Precision2 = 0;
         double Recall2 = 0;
-//        double F_Measure2 = 0;
         double HammingLoss2 = 0;
         ArrayList<Double> predict_1 = new ArrayList<>();
         ArrayList<Double> real_1 = new ArrayList<>();
@@ -132,12 +126,6 @@ public class Prediction {
 //            tep.insertAttributeAt(mypre2,tep.numAttributes());
 //            tep.insertAttributeAt(mlknn,tep.numAttributes());
 
-
-//            System.out.println(tep.numAttributes());
-
-//
-//            train.setClassIndex(train.numAttributes()-1);
-//            test.setClassIndex(test.numAttributes()-1);
             AdaBoostM1 adaclassifier = new AdaBoostM1();
             Bagging bagclassifier = new Bagging();
             J48 baseClassifier = new J48();
